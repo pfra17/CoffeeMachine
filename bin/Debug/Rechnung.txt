@@ -1,0 +1,8 @@
+##############Rechnung#############
+# Kaffee:                2.90 Sfr #
+# Espresso:              0.00 Sfr #
+# Latte Machiatto:       0.00 Sfr #
+# Americano:             0.00 Sfr #
+#                                 #
+# Gesamtpreis:           2.90 Sfr #
+###Vielen Dank für ihren Einkauf###
