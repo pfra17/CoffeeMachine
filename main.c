@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-//Logo für die Anzeige
+//Logo fï¿½r die Anzeige
 void meinlogo()
 {
     printf("#################################\n# Willkommen bei Premium Kaffee #\n#################################\n");
@@ -21,6 +21,23 @@ double ausgabegesamtsumme2 (struct kaffee *sort,int index)
     summe=(sort[0].anzahl * sort[0].preis) + (sort[1].anzahl * sort[1].preis)+(sort[2].anzahl * sort[2].preis)+(sort[3].anzahl * sort[3].preis);
     return summe;
     }
+
+int pruefeGeldStueck(double muenze)
+{
+    int cent = muenze * 100;
+    switch(cent)
+    {
+        case 5:     return 1;
+        case 10:    return 1;
+        case 20:    return 1;
+        case 50:    return 1;
+        case 100:   return 1;
+        case 200:   return 1;
+        case 500:   return 1;
+        default:    return 0;
+    }
+}
+
 
 //Funktion1 zur Brechnung der Einzelsummen
 double ausgabegesamtsumme (double wert1,int menge1)
@@ -56,21 +73,6 @@ double bezahlen(double zuZahlen)
         return gezahlt;
     }
 
-int pruefeGeldStueck(double muenze)
-{
-    int cent = muenze * 100;
-    switch(cent)
-    {
-        case 5:     return 1;
-        case 10:    return 1;
-        case 20:    return 1;
-        case 50:    return 1;
-        case 100:   return 1;
-        case 200:   return 1;
-        case 500:   return 1;
-        default:    return 0;
-    }
-}
 double retourgeld (double summand1, double summand2)
 {
     double retoursumme;
@@ -82,8 +84,8 @@ double retourgeld (double summand1, double summand2)
 int main()
 
 {   //Deklaration der Strukturfelder 1-4 (bzw 0-3),der summe,index,posten,abschluss,anzahl
-    //Aufruf von der Logo Funktion für die Anzeige
-    //Vorbereitungen zur Übergabe an ein TXT_File
+    //Aufruf von der Logo Funktion fï¿½r die Anzeige
+    //Vorbereitungen zur ï¿½bergabe an ein TXT_File
     FILE *fp;
     struct kaffee sorten[4] = {{1,"KaffeeCreme",2.90},{2,"Espresso",3.10},{3,"LatteMachiatto",4.50},{4,"Americano",4.00}};
     double summe,bezahlung,rueckgabe,gezahlt;
@@ -97,8 +99,8 @@ int main()
         printf("Dateifehler\n");
     }
 
-    //Begrüssung und Anzeige, do while Schleife: Falls abgebrochen wird, startet Anzeige neu,
-    //If Bedingung 1: Aufnahme der Betsellung und èbergabe an die Funktion2,
+    //Begrï¿½ssung und Anzeige, do while Schleife: Falls abgebrochen wird, startet Anzeige neu,
+    //If Bedingung 1: Aufnahme der Betsellung und ï¿½bergabe an die Funktion2,
     //If Bedingung 0: Bedanken und verabschieden.
 
     printf("\nGruezi, hier ist eine Auswahl unserer Produkte:\n");
@@ -111,8 +113,9 @@ int main()
     if (index==5)
     {
         printf("Schade vieleicht ein anderes mal. Einen schoenen Tag, bis bald bei Premium Kaffee\n");
+        return 0;
     }
-    if (index>0&&index<5);
+    if (index>0&&index<5)
     //do while Schleife zum einlesen beliebig vieler Posten
         posten=index-1;
         printf("Wieviele %s haetten sie gerne?\n",sorten[posten].bezeichnung);
@@ -127,8 +130,8 @@ int main()
 
         if (schleife==0)
         {
-        //Abfrage ob Bestellung ausgeführt werden soll,
-        //1: Bedanken und Rechnung drucken,übergabe der Werte an Funktion1 zur Einzelsummenberechnung für die Rechnung und Abfrage der Funktion2 für die Gesamtsumme aller Bestellungen.
+        //Abfrage ob Bestellung ausgefï¿½hrt werden soll,
+        //1: Bedanken und Rechnung drucken,ï¿½bergabe der Werte an Funktion1 zur Einzelsummenberechnung fï¿½r die Rechnung und Abfrage der Funktion2 fï¿½r die Gesamtsumme aller Bestellungen.
         //0: Abbruch und bedanken
         printf("Wollen sie den Vorgang abschliessen? Ja=1 Nein=0\n");
         scanf("%d",&abschluss);
@@ -150,7 +153,7 @@ int main()
                 fprintf(fp,"# Gesamtpreis:%15.2lf Sfr #\n",ausgabegesamtsumme2(sorten,3));
                     summe = ausgabegesamtsumme2(sorten,3);
                     printf("Gesamtpreis: %.2f Sfr\n",summe);
-                fprintf(fp,"###Vielen Dank für ihren Einkauf###\n");
+                fprintf(fp,"###Vielen Dank fï¿½r ihren Einkauf###\n");
 
 
                 gezahlt=bezahlen(summe);
@@ -162,7 +165,7 @@ int main()
 
             if (gezahlt>=ausgabegesamtsumme2(sorten,3))
     {
-                 for (delay_a=1; delay_a<= 4; delay_a++){                   //Simulation des Geldzählers
+                 for (delay_a=1; delay_a<= 4; delay_a++){                   //Simulation des Geldzï¿½hlers
                         printf(".");
                         for (delay_b = 1; delay_b <= 32767; delay_b++){
                             for (delay_c = 1; delay_c <= 32767; delay_c++){}
@@ -171,7 +174,7 @@ int main()
                 printf("\nVielen Dank. Retourgeld: %.2f Sfr\n",rueckgabe);
 
                 printf("Ihre Bestellung wird zubereitet.\n");
-                        for (delay_a=1; delay_a<= 10; delay_a++){                   //Delay für Kaffeezubereitung
+                        for (delay_a=1; delay_a<= 10; delay_a++){                   //Delay fï¿½r Kaffeezubereitung
                             printf(".");
                             for (delay_b = 1; delay_b <= 32767; delay_b++){
                                 for (delay_c = 1; delay_c <= 32767; delay_c++){}
